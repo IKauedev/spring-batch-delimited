@@ -16,10 +16,10 @@ public class DelimitedFileJobConfig {
 	public JobBuilderFactory jobBuilderFactory;
 	
 	@Bean
-	public Job fileDelimitedJob(Step leituraArquivoDelimitadoStep) {
+	public Job fileDelimitedJob(Step step) {
 		return jobBuilderFactory
 				.get("fileDelimitedJob")
-				.start(leituraArquivoDelimitadoStep)
+				.start(step)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}
